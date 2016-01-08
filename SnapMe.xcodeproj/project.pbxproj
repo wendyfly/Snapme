@@ -33,6 +33,8 @@
 		A27791B21C3F1EB000185D2C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A27791B11C3F1EB000185D2C /* libsqlite3.tbd */; };
 		A27791B41C3F1F1300185D2C /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A27791B31C3F1F1300185D2C /* libz.1.1.3.tbd */; };
 		A27791B61C3F1F2900185D2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A27791B51C3F1F2900185D2C /* MobileCoreServices.framework */; };
+		A27791BF1C3F416E00185D2C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27791BE1C3F416E00185D2C /* SignUpViewController.m */; };
+		A27791C21C3F485200185D2C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27791C11C3F485200185D2C /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,10 @@
 		A27791B11C3F1EB000185D2C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A27791B31C3F1F1300185D2C /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		A27791B51C3F1F2900185D2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A27791BD1C3F416E00185D2C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A27791BE1C3F416E00185D2C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A27791C01C3F485200185D2C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A27791C11C3F485200185D2C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +133,13 @@
 				A24C0E361C3CFA4B004FE793 /* AppDelegate.m */,
 				A24C0E381C3CFA4B004FE793 /* ViewController.h */,
 				A24C0E391C3CFA4B004FE793 /* ViewController.m */,
-				A24C0E3B1C3CFA4B004FE793 /* Main.storyboard */,
+				A27791C01C3F485200185D2C /* LoginViewController.h */,
+				A27791C11C3F485200185D2C /* LoginViewController.m */,
+				A27791BD1C3F416E00185D2C /* SignUpViewController.h */,
+				A27791BE1C3F416E00185D2C /* SignUpViewController.m */,
 				A27791971C3E4D6F00185D2C /* InboxTableViewController.h */,
 				A27791981C3E4D6F00185D2C /* InboxTableViewController.m */,
+				A24C0E3B1C3CFA4B004FE793 /* Main.storyboard */,
 				A277919F1C3F1B9500185D2C /* Bolts.framework */,
 				A277919D1C3F1B2D00185D2C /* Parse.framework */,
 				A24C0E3E1C3CFA4B004FE793 /* Assets.xcassets */,
@@ -231,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */,
+				A27791BF1C3F416E00185D2C /* SignUpViewController.m in Sources */,
+				A27791C21C3F485200185D2C /* LoginViewController.m in Sources */,
 				A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */,
 				A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */,
 				A24C0E341C3CFA4B004FE793 /* main.m in Sources */,

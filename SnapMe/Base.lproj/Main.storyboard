@@ -69,7 +69,7 @@
         <!--Snapme-->
         <scene sceneID="saf-23-iQn">
             <objects>
-                <viewController id="eVi-lm-ZdO" sceneMemberID="viewController">
+                <viewController id="eVi-lm-ZdO" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F6u-2B-qei"/>
                         <viewControllerLayoutGuide type="bottom" id="k5z-YT-pwN"/>
@@ -91,6 +91,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxS-qH-TTH">
                                 <rect key="frame" x="20" y="305" width="569" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="eVi-lm-ZdO" eventType="touchUpInside" id="8HV-rI-seO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHf-Mw-zuG">
                                 <rect key="frame" x="20" y="231" width="569" height="30"/>
@@ -101,6 +104,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snapme" id="czC-1q-zgq"/>
+                    <connections>
+                        <outlet property="emailField" destination="OHf-Mw-zuG" id="64Y-Xy-tvN"/>
+                        <outlet property="passwordField" destination="F5P-XJ-iH8" id="1UK-n6-VA3"/>
+                        <outlet property="usernameField" destination="K8W-gt-W9v" id="3pS-oB-YU6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k2-i0-O35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-103" y="577"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TgT-hP-CEt">
             <objects>
-                <viewController id="cJl-7y-lAv" sceneMemberID="viewController">
+                <viewController id="cJl-7y-lAv" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bKd-zN-s1d"/>
                         <viewControllerLayoutGuide type="bottom" id="x80-mC-g5F"/>
