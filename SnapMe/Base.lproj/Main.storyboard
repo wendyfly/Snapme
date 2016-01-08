@@ -212,6 +212,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szm-eN-ddf">
                                 <rect key="frame" x="16" y="256" width="569" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="cJl-7y-lAv" eventType="touchUpInside" id="23A-Ru-Ldr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,6 +227,10 @@
                             <constraint firstItem="8o5-2K-QzC" firstAttribute="leading" secondItem="R3l-SM-Xx3" secondAttribute="leadingMargin" constant="10" id="wVH-gu-ebe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="8o5-2K-QzC" id="sfU-me-oki"/>
+                        <outlet property="usernameField" destination="79e-Ny-j9P" id="sUL-yH-1Sc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWN-qM-jbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
