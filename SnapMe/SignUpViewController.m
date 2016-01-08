@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import <Parse/Parse.h>
 
 @interface SignUpViewController ()
 
@@ -39,12 +40,45 @@
      NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
      NSString *email = [self.emailField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if(username.length == 0 || password.length == 0 || email.length == 0) {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Oops" message: @"Please fill the username field" preferredStyle: UIAlertViewStyleDefault];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Oops" message: @"Please fill the username field" preferredStyle: UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        UIAlertAction* cancel = [UIAlertAction
+                                 actionWithTitle:@"Cancel"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please enter username, password and email" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+        [alert addAction:ok];
+        [alert addAction:cancel];
+         [self presentViewController:alert animated:YES completion:nil];
         
-        
-        [alert show];
+//
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please enter username, password and email" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+//        
+//        
+//        [alert show];
+    } else {
+        PFUser *user = [PFUser user];
+        user.username = username;
+        user.password = password;
+        user.email = email;
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            if(!error) {
+                [self.navigationController popToRootViewControllerAnimated: true];
+            } else {
+                NSString *errorString = [error userInfo][@"error"];
+            }
+        }];
     }
                           
 }
