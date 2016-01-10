@@ -9,6 +9,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "InboxViewController.h"
 
 @interface LoginViewController ()
 
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,21 +69,10 @@
         [PFUser logInWithUsernameInBackground:username password:password
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                NSLog(@"Successfully");
-                                                UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Congratulations" message: @"Successfully" preferredStyle: UIAlertControllerStyleAlert];
-                                                UIAlertAction* ok = [UIAlertAction
-                                                                     actionWithTitle:@"OK"
-                                                                     style:UIAlertActionStyleDefault
-                                                                     handler:^(UIAlertAction * action)
-                                                                     {
-                                                                         [alert dismissViewControllerAnimated:YES completion:nil];
-                                                                         
-                                                                     }];
-                                                [alert addAction:ok];
-                                                [self presentViewController:alert animated:YES completion:nil];
                                                 
-                                                [self.navigationController popToRootViewControllerAnimated:true];
-                                                
+
+                                               [self.navigationController popToRootViewControllerAnimated:YES];
+                                            
                                                 
                                             } else {
                                                 NSLog(@"fail");

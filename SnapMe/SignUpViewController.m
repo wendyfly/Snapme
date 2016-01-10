@@ -61,12 +61,7 @@
         [alert addAction:ok];
         [alert addAction:cancel];
          [self presentViewController:alert animated:YES completion:nil];
-        
-//
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"Please enter username, password and email" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
-//        
-//        
-//        [alert show];
+
     } else {
         PFUser *user = [PFUser user];
         user.username = username;

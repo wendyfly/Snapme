@@ -29,7 +29,13 @@
                             <outlet property="delegate" destination="aUK-wi-0R4" id="bEm-Zv-5oS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Snapme" id="AEz-5p-6CG"/>
+                    <navigationItem key="navigationItem" title="Snapme" id="AEz-5p-6CG">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" style="done" id="eHF-Kq-ho1">
+                            <connections>
+                                <action selector="logout:" destination="aUK-wi-0R4" id="otj-Hm-LuQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="cJl-7y-lAv" kind="show" identifier="showLogin" id="UO0-G6-NaY"/>
                     </connections>
@@ -38,7 +44,7 @@
             </objects>
             <point key="canvasLocation" x="2241" y="-64"/>
         </scene>
-        <!--Snapme-->
+        <!--Friends-->
         <scene sceneID="75k-P4-9os">
             <objects>
                 <tableViewController id="8Ns-S3-lbT" sceneMemberID="viewController">
@@ -61,7 +67,7 @@
                             <outlet property="delegate" destination="8Ns-S3-lbT" id="qx8-gf-mjw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Snapme" id="3KQ-Td-f9p"/>
+                    <navigationItem key="navigationItem" title="Friends" id="3KQ-Td-f9p"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4Y-gk-xfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,12 +201,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-8y-yqI">
-                                <rect key="frame" x="20" y="363" width="353" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZc-0M-W8p">
                                 <rect key="frame" x="262" y="359" width="146" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -216,6 +216,12 @@
                                     <action selector="login:" destination="cJl-7y-lAv" eventType="touchUpInside" id="23A-Ru-Ldr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-8y-yqI">
+                                <rect key="frame" x="20" y="363" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

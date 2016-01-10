@@ -17,10 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
-    [self performSegueWithIdentifier:@"showLogin" sender: self];
+    PFUser *currentUser = [PFUser currentUser];
+    if(currentUser) {
+        NSLog(@"Current user: %@", currentUser.username);
+    } else {
+        [self performSegueWithIdentifier:@"showLogin" sender: self];
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,4 +97,14 @@
 }
 */
 
+- (IBAction)logout:(id)sender {
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showLogin"]) {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:true];
+    }
+}
 @end
