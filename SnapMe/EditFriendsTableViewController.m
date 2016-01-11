@@ -53,6 +53,12 @@
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     
+    if([self isFriend:user]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -77,5 +83,15 @@
     }];
 }
 
+#pragma mark -Helper methods
+
+-(BOOL) isFriend:(PFUser *)user {
+    for (PFUser *user1 in self.friends) {
+        if([user1.objectId isEqualToString: user.objectId]) {
+            return true;
+        }
+    }
+    return false;
+};
 
 @end

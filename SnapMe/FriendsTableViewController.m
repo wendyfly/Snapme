@@ -7,6 +7,7 @@
 //
 
 #import "FriendsTableViewController.h"
+#import "EditFriendsTableViewController.h"
 
 @interface FriendsTableViewController ()
 
@@ -32,6 +33,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"editFriends"]) {
+        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController;
+        viewController.friends = [NSMutableArray arrayWithArray:self.allFriends];
+        
+    } 
 }
 
 #pragma mark - Table view data source

@@ -68,9 +68,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="3KQ-Td-f9p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="B3Q-Cy-xN7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B3Q-Cy-xN7">
                             <connections>
-                                <segue destination="fp2-ce-2IU" kind="push" id="BxR-Sp-BJc"/>
+                                <segue destination="fp2-ce-2IU" kind="push" identifier="editFriends" id="BxR-Sp-BJc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
