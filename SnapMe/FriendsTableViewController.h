@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) PFRelation *friendsRelation;
 @property(nonatomic, strong) NSArray *allFriends;
+
+-(void) updateTable;
 @end

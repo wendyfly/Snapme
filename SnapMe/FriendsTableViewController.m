@@ -17,18 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
-    PFQuery *query = [self.friendsRelation query];
-    [query orderByAscending:@"username"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if(error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        } else {
-            self.allFriends = objects;
-            [self.tableView reloadData];
-        }
-    }];
-   }
+    [self updateTable];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateTable];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -59,8 +55,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFUser *user = [self.allFriends objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
-    
-    
     return cell;
 }
 
@@ -75,5 +69,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Helper method
+
+-(void) updateTable {
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        } else {
+            self.allFriends = objects;
+            [self.tableView reloadData];
+        }
+    }];
+
+}
 
 @end
