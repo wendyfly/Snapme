@@ -140,7 +140,7 @@
         <!--Snapme-->
         <scene sceneID="Nbk-xk-SyG">
             <objects>
-                <tableViewController id="qbX-2j-Foy" sceneMemberID="viewController">
+                <tableViewController id="qbX-2j-Foy" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FXm-Ql-BuO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

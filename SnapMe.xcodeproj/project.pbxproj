@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A23265CB1C431E1C0005DC94 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23265CA1C431E1C0005DC94 /* FriendsTableViewController.m */; };
+		A23265CE1C4369090005DC94 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23265CD1C4369090005DC94 /* CameraViewController.m */; };
 		A24C0E341C3CFA4B004FE793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E331C3CFA4B004FE793 /* main.m */; };
 		A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E361C3CFA4B004FE793 /* AppDelegate.m */; };
 		A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E391C3CFA4B004FE793 /* ViewController.m */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		A23265C91C431E1C0005DC94 /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
 		A23265CA1C431E1C0005DC94 /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
+		A23265CC1C4369090005DC94 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A23265CD1C4369090005DC94 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		A24C0E2F1C3CFA4B004FE793 /* SnapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24C0E331C3CFA4B004FE793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A24C0E351C3CFA4B004FE793 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				A27791C41C420E0500185D2C /* EditFriendsTableViewController.m */,
 				A23265C91C431E1C0005DC94 /* FriendsTableViewController.h */,
 				A23265CA1C431E1C0005DC94 /* FriendsTableViewController.m */,
+				A23265CC1C4369090005DC94 /* CameraViewController.h */,
+				A23265CD1C4369090005DC94 /* CameraViewController.m */,
 				A24C0E381C3CFA4B004FE793 /* ViewController.h */,
 				A24C0E391C3CFA4B004FE793 /* ViewController.m */,
 				A27791C01C3F485200185D2C /* LoginViewController.h */,
@@ -256,6 +261,7 @@
 				A27791BF1C3F416E00185D2C /* SignUpViewController.m in Sources */,
 				A27791C21C3F485200185D2C /* LoginViewController.m in Sources */,
 				A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */,
+				A23265CE1C4369090005DC94 /* CameraViewController.m in Sources */,
 				A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */,
 				A24C0E341C3CFA4B004FE793 /* main.m in Sources */,
 			);
