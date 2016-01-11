@@ -67,13 +67,30 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     //adding users in ui
     UITableViewCell *cell = [tableView cellForRowAtIndexPath: indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    // update the backend
-    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
     
     PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
-    [friendsRelation addObject: user];
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+
+    
+    if( [self isFriend:user]) {
+        // 1.remove the checkmark
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        // 2.remove from friends array
+        for (PFUser *user1 in self.friends) {
+            if([user1.objectId isEqualToString: user.objectId]) {
+                [self.friends removeObject:user1];
+                break;
+            }
+        }
+        // 3. remove from relation table
+        [friendsRelation removeObject:user];
+    }  else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.friends addObject:user];
+        [friendsRelation addObject:user];
+    
+    }
+    
     [self.currentUser saveInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
         if(error) {
             NSLog(@"Eoor: %@ %@", error, [error userInfo]);
@@ -81,6 +98,7 @@
             
         }
     }];
+
 }
 
 #pragma mark -Helper methods
