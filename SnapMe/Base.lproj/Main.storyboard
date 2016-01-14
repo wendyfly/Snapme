@@ -146,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aKh-pR-IY8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aKh-pR-IY8">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aKh-pR-IY8" id="zlA-3a-Exk">
@@ -160,7 +160,14 @@
                             <outlet property="delegate" destination="qbX-2j-Foy" id="bgk-JJ-CDl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipients" id="EaH-CT-Nbl"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="EaH-CT-Nbl">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="LyG-sW-tF7">
+                            <connections>
+                                <action selector="cancel:" destination="qbX-2j-Foy" id="QRx-rR-uTW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="CMk-if-Hpc"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTB-0h-PTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
