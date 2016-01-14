@@ -137,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="3586" y="-64"/>
         </scene>
-        <!--Snapme-->
+        <!--Recipients-->
         <scene sceneID="Nbk-xk-SyG">
             <objects>
                 <tableViewController id="qbX-2j-Foy" customClass="CameraViewController" sceneMemberID="viewController">
@@ -160,7 +160,7 @@
                             <outlet property="delegate" destination="qbX-2j-Foy" id="bgk-JJ-CDl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Snapme" id="EaH-CT-Nbl"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="EaH-CT-Nbl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTB-0h-PTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
