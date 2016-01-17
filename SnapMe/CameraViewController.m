@@ -34,8 +34,6 @@
             [self.tableView reloadData];
         }
     }];
- 
-
     
     
     if (self.image == nil && [self.videoFilePath length] == 0) {
@@ -158,9 +156,114 @@
 #pragma mark - IBAction
 
 - (IBAction)cancel:(id)sender {
+    [self reset];
+    [self.tabBarController setSelectedIndex:0];
+}
+
+- (IBAction)sendMessage:(id)sender {
+    if(self.image == nil && [self.videoFilePath length] == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Try again" message: @"You haven't selected any content" preferredStyle: UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self uploadMessage];
+        [self.tabBarController setSelectedIndex:0];
+    }
+}
+
+#pragma mark -  Helper methods
+-(void) uploadMessage {
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
+    //1. check if image or video
+    if(self.image != nil) {
+        UIImage *newImage = [ self resizeImage:self.image toWidth:320.0f andHeight: 480.0f];
+        fileData = UIImagePNGRepresentation(newImage);
+        fileName = @"image.png";
+        fileType = @"image";
+    } else {
+        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
+        fileName = @"video.mov";
+        fileType = @"video";
+        
+    }
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        //TODO: TEST ERROR
+        error = [[NSError alloc] init];
+        if(error) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"We came cross an error" message: @"sending your message again" preferredStyle: UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     [alert dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            PFObject *message = [PFObject objectWithClassName: @"Messages"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(error) {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"We came cross an error" message: @"sending your message again" preferredStyle: UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    
+                    [alert addAction:ok];
+                    [self presentViewController:alert animated:YES completion:nil];
+                } else {
+                    //Everything is successfully
+                    [self reset];
+                }
+            }];
+        }
+    }];
+    //2. If it's an image, we want ot shrink it
+    //3. Upload the file itself
+    //4. Upload the message details
+    
+    
+}
+
+- (void)reset {
     self.image = nil;
     self.videoFilePath = nil;
     [self.recipients removeAllObjects];
-    [self.tabBarController setSelectedIndex:0];
+}
+
+-(UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height {
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRectangle = CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [self.image drawInRect:newRectangle];
+    UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resizeImage;
+    
 }
 @end

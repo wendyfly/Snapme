@@ -166,7 +166,11 @@
                                 <action selector="cancel:" destination="qbX-2j-Foy" id="QRx-rR-uTW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="CMk-if-Hpc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="CMk-if-Hpc">
+                            <connections>
+                                <action selector="sendMessage:" destination="qbX-2j-Foy" id="ppM-jj-Wxz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTB-0h-PTM" userLabel="First Responder" sceneMemberID="firstResponder"/>

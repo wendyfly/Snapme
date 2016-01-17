@@ -21,5 +21,10 @@
 
 - (IBAction)cancel:(id)sender;
 
+- (IBAction)sendMessage:(id)sender;
+
+-(void)uploadMessage;
+
+-(UIImage *)resizeImage:(UIImage *) image toWidth:(float)width andHeight:(float)height;
 
 @end
