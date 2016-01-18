@@ -10,5 +10,7 @@
 
 @interface InboxTableViewController : UITableViewController
 
+@property(nonatomic, strong) NSArray *messages;
+
 - (IBAction)logout:(id)sender;
 @end

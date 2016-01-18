@@ -26,6 +26,27 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if([[PFUser currentUser] objectId] != nil ) {
+        PFQuery *query = [ PFQuery queryWithClassName:@"Messages"];
+        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+            if(error) {
+                NSLog(@"Error : %@ %@", error,[error userInfo]);
+            } else {
+                // we found the messages
+                self.messages = objects;
+                [self.tableView reloadData];
+                NSLog(@"Retrieved %d messages", [self.messages count]);
+            }
+        }];
+
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -34,24 +55,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.messages.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    cell.textLabel.text = [message objectForKey: @"senderName"];
+    NSString *fileType = [message objectForKey:@"fileType"];
+    if([fileType isEqualToString: @"image"]) {
+        cell.imageView.image = [UIImage imageNamed:@"icon_image"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"icon_video"];
+    }
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

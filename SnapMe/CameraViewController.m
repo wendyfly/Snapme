@@ -201,7 +201,7 @@
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         //TODO: TEST ERROR
-        error = [[NSError alloc] init];
+//        error = [[NSError alloc] init];
         if(error) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"We came cross an error" message: @"sending your message again" preferredStyle: UIAlertControllerStyleAlert];
             UIAlertAction* ok = [UIAlertAction

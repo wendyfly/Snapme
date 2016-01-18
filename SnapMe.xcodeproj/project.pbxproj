@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A23265CB1C431E1C0005DC94 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23265CA1C431E1C0005DC94 /* FriendsTableViewController.m */; };
 		A23265CE1C4369090005DC94 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23265CD1C4369090005DC94 /* CameraViewController.m */; };
+		A23265D31C4C6C6E0005DC94 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265CF1C4C6C6E0005DC94 /* icon_image.png */; };
+		A23265D41C4C6C6E0005DC94 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D01C4C6C6E0005DC94 /* icon_image@2x.png */; };
+		A23265D51C4C6C6E0005DC94 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D11C4C6C6E0005DC94 /* icon_video.png */; };
+		A23265D61C4C6C6E0005DC94 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D21C4C6C6E0005DC94 /* icon_video@2x.png */; };
 		A24C0E341C3CFA4B004FE793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E331C3CFA4B004FE793 /* main.m */; };
 		A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E361C3CFA4B004FE793 /* AppDelegate.m */; };
 		A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E391C3CFA4B004FE793 /* ViewController.m */; };
@@ -45,6 +49,10 @@
 		A23265CA1C431E1C0005DC94 /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
 		A23265CC1C4369090005DC94 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		A23265CD1C4369090005DC94 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		A23265CF1C4C6C6E0005DC94 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
+		A23265D01C4C6C6E0005DC94 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
+		A23265D11C4C6C6E0005DC94 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
+		A23265D21C4C6C6E0005DC94 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
 		A24C0E2F1C3CFA4B004FE793 /* SnapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24C0E331C3CFA4B004FE793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A24C0E351C3CFA4B004FE793 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +168,10 @@
 				A24C0E3E1C3CFA4B004FE793 /* Assets.xcassets */,
 				A24C0E401C3CFA4B004FE793 /* LaunchScreen.storyboard */,
 				A24C0E431C3CFA4B004FE793 /* Info.plist */,
+				A23265CF1C4C6C6E0005DC94 /* icon_image.png */,
+				A23265D01C4C6C6E0005DC94 /* icon_image@2x.png */,
+				A23265D11C4C6C6E0005DC94 /* icon_video.png */,
+				A23265D21C4C6C6E0005DC94 /* icon_video@2x.png */,
 				A24C0E491C3CFA82004FE793 /* camera.png */,
 				A24C0E4A1C3CFA82004FE793 /* camera@2x.png */,
 				A24C0E4B1C3CFA82004FE793 /* friends.png */,
@@ -236,15 +248,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23265D51C4C6C6E0005DC94 /* icon_video.png in Resources */,
 				A24C0E421C3CFA4B004FE793 /* LaunchScreen.storyboard in Resources */,
 				A24C0E511C3CFA82004FE793 /* friends.png in Resources */,
+				A23265D31C4C6C6E0005DC94 /* icon_image.png in Resources */,
 				A24C0E521C3CFA82004FE793 /* friends@2x.png in Resources */,
 				A24C0E501C3CFA82004FE793 /* camera@2x.png in Resources */,
 				A24C0E531C3CFA82004FE793 /* inbox.png in Resources */,
 				A24C0E3F1C3CFA4B004FE793 /* Assets.xcassets in Resources */,
+				A23265D41C4C6C6E0005DC94 /* icon_image@2x.png in Resources */,
 				A24C0E4F1C3CFA82004FE793 /* camera.png in Resources */,
 				A24C0E3D1C3CFA4B004FE793 /* Main.storyboard in Resources */,
 				A24C0E541C3CFA82004FE793 /* inbox@2x.png in Resources */,
+				A23265D61C4C6C6E0005DC94 /* icon_video@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
