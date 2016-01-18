@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.moviePlayer = [[MPMoviePlayerController alloc] init];
     PFUser *currentUser = [PFUser currentUser];
     if(currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
@@ -40,7 +41,7 @@
                 // we found the messages
                 self.messages = objects;
                 [self.tableView reloadData];
-                NSLog(@"Retrieved %d messages", [self.messages count]);
+//                NSLog(@"Retrieved %d messages", [self.messages count]);
             }
         }];
 
@@ -85,8 +86,23 @@
     if([fileType isEqualToString: @"image"]) {
         [self performSegueWithIdentifier:@"showImage" sender:self];
     } else {
-    
+        PFFile *videoFile = [self.selectedMessage objectForKey:@"file"];
+        NSURL *fileUrl = [NSURL URLWithString:videoFile.url];
+        self.moviePlayer.contentURL = fileUrl;
+        [self.moviePlayer prepareToPlay];
+        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+        
+        // Add it to the view controller so we can see it
+        [self.view addSubview:self.moviePlayer.view];
+        [self.moviePlayer setFullscreen:YES animated:YES];
+//
+//        AVPlayer *player = [AVPlayer playerWithURL:fileUrl];
+//        self.moviePlayer.player = player;
+//        [self presentViewController:self.moviePlayer animated:YES completion:nil];
+       
     }
+    //delete image/ video
+    
 }
 
 

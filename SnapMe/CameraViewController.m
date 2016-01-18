@@ -140,7 +140,7 @@
 
     } else {
         // A video was taken
-        self.videoFilePath = CFBridgingRelease([[info objectForKey:UIImagePickerControllerMediaURL] path]);
+        self.videoFilePath = (__bridge NSString *)([[info objectForKey:UIImagePickerControllerMediaURL] path]);
         if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera) {
             // Save the VIDEO!
             if(UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.videoFilePath))
@@ -193,12 +193,13 @@
         fileName = @"image.png";
         fileType = @"image";
     } else {
-        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
-        fileName = @"video.mov";
-        fileType = @"video";
+            fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
+            fileName = @"video.mov";
+            fileType = @"video";
+
         
     }
-    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+   PFFile *file = [PFFile fileWithName:fileName data:fileData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
         //TODO: TEST ERROR
 //        error = [[NSError alloc] init];

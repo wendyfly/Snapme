@@ -28,7 +28,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if([self respondsToSelector: @selector(timeout)]){
-        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timeout) userInfo:nil repeats:false];
+        [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeout) userInfo:nil repeats:false];
     } else {
         NSLog(@"Error: selector missing!");
     }
@@ -40,6 +40,7 @@
 
 #pragma mark - Helper method
 -(void)timeout {
+    // back to the previous view
     [self.navigationController popViewControllerAnimated:true];
 }
 
