@@ -25,9 +25,22 @@
     self.navigationItem.title = title;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if([self respondsToSelector: @selector(timeout)]){
+        [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timeout) userInfo:nil repeats:false];
+    } else {
+        NSLog(@"Error: selector missing!");
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helper method
+-(void)timeout {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 /*
