@@ -102,7 +102,18 @@
        
     }
     //delete image/ video
-    
+    NSMutableArray *recipientIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey: @"recipientIds"]];
+    NSLog(@"Recipients: %@", recipientIds);
+    if([recipientIds count]) {
+        // last recipient, can delete
+        [self.selectedMessage deleteInBackground];
+    } else {
+        // remove the recipient and save it
+        [recipientIds removeObject:[[PFUser currentUser] objectId]];
+        // let backend know we made this change
+        [self.selectedMessage setObject:recipientIds forKey:@"recipientIds"];
+        [self.selectedMessage saveInBackground];
+    }
 }
 
 
