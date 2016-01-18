@@ -13,6 +13,7 @@
 		A23265D41C4C6C6E0005DC94 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D01C4C6C6E0005DC94 /* icon_image@2x.png */; };
 		A23265D51C4C6C6E0005DC94 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D11C4C6C6E0005DC94 /* icon_video.png */; };
 		A23265D61C4C6C6E0005DC94 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A23265D21C4C6C6E0005DC94 /* icon_video@2x.png */; };
+		A23265D91C4C77120005DC94 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A23265D81C4C77120005DC94 /* ImageViewController.m */; };
 		A24C0E341C3CFA4B004FE793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E331C3CFA4B004FE793 /* main.m */; };
 		A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E361C3CFA4B004FE793 /* AppDelegate.m */; };
 		A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A24C0E391C3CFA4B004FE793 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		A23265D01C4C6C6E0005DC94 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
 		A23265D11C4C6C6E0005DC94 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
 		A23265D21C4C6C6E0005DC94 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
+		A23265D71C4C77120005DC94 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		A23265D81C4C77120005DC94 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A24C0E2F1C3CFA4B004FE793 /* SnapMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24C0E331C3CFA4B004FE793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A24C0E351C3CFA4B004FE793 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				A24C0E351C3CFA4B004FE793 /* AppDelegate.h */,
+				A23265D71C4C77120005DC94 /* ImageViewController.h */,
+				A23265D81C4C77120005DC94 /* ImageViewController.m */,
 				A24C0E361C3CFA4B004FE793 /* AppDelegate.m */,
 				A27791C31C420E0500185D2C /* EditFriendsTableViewController.h */,
 				A27791C41C420E0500185D2C /* EditFriendsTableViewController.m */,
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23265D91C4C77120005DC94 /* ImageViewController.m in Sources */,
 				A27791C51C420E0500185D2C /* EditFriendsTableViewController.m in Sources */,
 				A23265CB1C431E1C0005DC94 /* FriendsTableViewController.m in Sources */,
 				A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */,
