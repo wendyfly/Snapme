@@ -35,6 +35,12 @@
 }
 */
 
+
+
+- (IBAction)dismiss:(id)sender {
+    [self.navigationController popViewControllerAnimated:TRUE];
+}
+
 - (IBAction)signUp:(id)sender {
     NSString *username = [self.usernameField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
      NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];

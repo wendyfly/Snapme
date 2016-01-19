@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chatting.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="9IS-gv-lY8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="chatting_snapme.png" translatesAutoresizingMaskIntoConstraints="NO" id="9IS-gv-lY8">
                                 <rect key="frame" x="163" y="155" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -34,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chatting.jpeg" width="245" height="206"/>
+        <image name="chatting_snapme.png" width="245" height="206"/>
     </resources>
 </document>

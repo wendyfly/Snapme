@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
+- (IBAction)dismiss:(id)sender;
+
 - (IBAction)signUp:(id)sender;
 
 @end

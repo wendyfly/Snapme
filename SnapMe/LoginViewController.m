@@ -21,6 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = true;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:TRUE];
 }
 
 - (void)didReceiveMemoryWarning {
