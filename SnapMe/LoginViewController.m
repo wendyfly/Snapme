@@ -21,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = true;
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
     
 }
 
@@ -107,5 +109,10 @@
                                             }
                                         }];
     }
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 @end
