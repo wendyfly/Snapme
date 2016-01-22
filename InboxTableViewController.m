@@ -75,6 +75,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *message = [self.messages objectAtIndex:indexPath.row];
     cell.textLabel.text = [message objectForKey: @"senderName"];
+    
+    // add disclosure color
+    UIColor *disclosureColor = [UIColor colorWithRed:0 green:0.545 blue:0.545 alpha:1];
+    cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DISCLOSURE_INDICATOR color: disclosureColor];
+    
     NSString *fileType = [message objectForKey:@"fileType"];
     if([fileType isEqualToString: @"image"]) {
         cell.imageView.image = [UIImage imageNamed:@"icon_image"];

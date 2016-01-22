@@ -34,6 +34,8 @@
 		A24C0E521C3CFA82004FE793 /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24C0E4C1C3CFA82004FE793 /* friends@2x.png */; };
 		A24C0E531C3CFA82004FE793 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A24C0E4D1C3CFA82004FE793 /* inbox.png */; };
 		A24C0E541C3CFA82004FE793 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24C0E4E1C3CFA82004FE793 /* inbox@2x.png */; };
+		A25850C61C52141C00B1253F /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C31C52141C00B1253F /* MSCellAccessory.m */; };
+		A25850C71C52141C00B1253F /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C51C52141C00B1253F /* UIView+AccessViewController.m */; };
 		A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27791981C3E4D6F00185D2C /* InboxTableViewController.m */; };
 		A277919E1C3F1B2D00185D2C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919D1C3F1B2D00185D2C /* Parse.framework */; };
 		A27791A01C3F1B9500185D2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919F1C3F1B9500185D2C /* Bolts.framework */; };
@@ -88,6 +90,10 @@
 		A24C0E4C1C3CFA82004FE793 /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
 		A24C0E4D1C3CFA82004FE793 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
 		A24C0E4E1C3CFA82004FE793 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
+		A25850C21C52141C00B1253F /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
+		A25850C31C52141C00B1253F /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
+		A25850C41C52141C00B1253F /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
+		A25850C51C52141C00B1253F /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
 		A27791971C3E4D6F00185D2C /* InboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTableViewController.h; path = ../InboxTableViewController.h; sourceTree = "<group>"; };
 		A27791981C3E4D6F00185D2C /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTableViewController.m; path = ../InboxTableViewController.m; sourceTree = "<group>"; };
 		A277919D1C3F1B2D00185D2C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		A24C0E261C3CFA4B004FE793 = {
 			isa = PBXGroup;
 			children = (
+				A25850C11C52141C00B1253F /* MSCellAccessory */,
 				A23265DA1C4CA3F90005DC94 /* MediaPlayer.framework */,
 				A27791B51C3F1F2900185D2C /* MobileCoreServices.framework */,
 				A27791B31C3F1F1300185D2C /* libz.1.1.3.tbd */,
@@ -219,6 +226,17 @@
 				A24C0E331C3CFA4B004FE793 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A25850C11C52141C00B1253F /* MSCellAccessory */ = {
+			isa = PBXGroup;
+			children = (
+				A25850C21C52141C00B1253F /* MSCellAccessory.h */,
+				A25850C31C52141C00B1253F /* MSCellAccessory.m */,
+				A25850C41C52141C00B1253F /* UIView+AccessViewController.h */,
+				A25850C51C52141C00B1253F /* UIView+AccessViewController.m */,
+			);
+			path = MSCellAccessory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +332,10 @@
 				A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */,
 				A27791BF1C3F416E00185D2C /* SignUpViewController.m in Sources */,
 				A27791C21C3F485200185D2C /* LoginViewController.m in Sources */,
+				A25850C61C52141C00B1253F /* MSCellAccessory.m in Sources */,
 				A24C0E3A1C3CFA4B004FE793 /* ViewController.m in Sources */,
 				A23265CE1C4369090005DC94 /* CameraViewController.m in Sources */,
+				A25850C71C52141C00B1253F /* UIView+AccessViewController.m in Sources */,
 				A24C0E371C3CFA4B004FE793 /* AppDelegate.m in Sources */,
 				A24C0E341C3CFA4B004FE793 /* main.m in Sources */,
 			);

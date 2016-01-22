@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "MSCellAccessory.h"
 @import AVKit;
 
 @interface InboxTableViewController : UITableViewController
