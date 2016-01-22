@@ -62,6 +62,14 @@
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    // customize the tab bar
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.302 green:0.765 blue:0.773 alpha:1]];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+
+
 }
 
 @end
