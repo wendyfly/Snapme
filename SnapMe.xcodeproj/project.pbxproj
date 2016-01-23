@@ -36,6 +36,7 @@
 		A24C0E541C3CFA82004FE793 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A24C0E4E1C3CFA82004FE793 /* inbox@2x.png */; };
 		A25850C61C52141C00B1253F /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C31C52141C00B1253F /* MSCellAccessory.m */; };
 		A25850C71C52141C00B1253F /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C51C52141C00B1253F /* UIView+AccessViewController.m */; };
+		A25850CA1C54409B00B1253F /* GravatarUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C81C54409B00B1253F /* GravatarUrlBuilder.m */; };
 		A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27791981C3E4D6F00185D2C /* InboxTableViewController.m */; };
 		A277919E1C3F1B2D00185D2C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919D1C3F1B2D00185D2C /* Parse.framework */; };
 		A27791A01C3F1B9500185D2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919F1C3F1B9500185D2C /* Bolts.framework */; };
@@ -94,6 +95,8 @@
 		A25850C31C52141C00B1253F /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
 		A25850C41C52141C00B1253F /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
 		A25850C51C52141C00B1253F /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
+		A25850C81C54409B00B1253F /* GravatarUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarUrlBuilder.m; sourceTree = "<group>"; };
+		A25850C91C54409B00B1253F /* GravatarUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarUrlBuilder.h; sourceTree = "<group>"; };
 		A27791971C3E4D6F00185D2C /* InboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTableViewController.h; path = ../InboxTableViewController.h; sourceTree = "<group>"; };
 		A27791981C3E4D6F00185D2C /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTableViewController.m; path = ../InboxTableViewController.m; sourceTree = "<group>"; };
 		A277919D1C3F1B2D00185D2C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		A24C0E311C3CFA4B004FE793 /* SnapMe */ = {
 			isa = PBXGroup;
 			children = (
+				A25850C81C54409B00B1253F /* GravatarUrlBuilder.m */,
+				A25850C91C54409B00B1253F /* GravatarUrlBuilder.h */,
 				A24C0E351C3CFA4B004FE793 /* AppDelegate.h */,
 				A24C0E361C3CFA4B004FE793 /* AppDelegate.m */,
 				A23265D71C4C77120005DC94 /* ImageViewController.h */,
@@ -270,6 +275,7 @@
 				TargetAttributes = {
 					A24C0E2E1C3CFA4B004FE793 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ZT4QB2PUTX;
 					};
 				};
 			};
@@ -330,6 +336,7 @@
 				A27791C51C420E0500185D2C /* EditFriendsTableViewController.m in Sources */,
 				A23265CB1C431E1C0005DC94 /* FriendsTableViewController.m in Sources */,
 				A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */,
+				A25850CA1C54409B00B1253F /* GravatarUrlBuilder.m in Sources */,
 				A27791BF1C3F416E00185D2C /* SignUpViewController.m in Sources */,
 				A27791C21C3F485200185D2C /* LoginViewController.m in Sources */,
 				A25850C61C52141C00B1253F /* MSCellAccessory.m in Sources */,
@@ -447,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SnapMe",
@@ -462,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SnapMe",

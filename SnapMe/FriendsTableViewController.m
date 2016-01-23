@@ -8,6 +8,7 @@
 
 #import "FriendsTableViewController.h"
 #import "EditFriendsTableViewController.h"
+#import "GravatarUrlBuilder.h"
 
 @interface FriendsTableViewController ()
 
@@ -55,6 +56,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFUser *user = [self.allFriends objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
+    
+    //1.get email address
+    NSString *emal = [user objectForKey:@"email"];
+    //2.create the md5 hash
+    NSURL *gravataUrl = [GravatarUrlBuilder getGravatarUrl:emal];
+    
+    //3.request the image from gravatar
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:gravataUrl];
+    
+    //4.Set image in cell
+    
+    cell.imageView.image = imageData;
+    
     return cell;
 }
 
