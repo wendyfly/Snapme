@@ -14,6 +14,8 @@
 
 @implementation EditFriendsTableViewController
 
+UIColor *disclosureColor;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFQuery *query = [PFUser query];
@@ -27,6 +29,7 @@
         }
     }];
     self.currentUser = [PFUser currentUser];
+    disclosureColor = [UIColor colorWithRed:0 green:0.545 blue:0.545 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +57,9 @@
     cell.textLabel.text = user.username;
     
     if([self isFriend:user]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.accessoryView =  [MSCellAccessory accessoryWithType:FLAT_CHECKMARK color: disclosureColor];
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryView = nil;
     }
     
     return cell;
@@ -74,7 +77,7 @@
     
     if( [self isFriend:user]) {
         // 1.remove the checkmark
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryView = nil;
         // 2.remove from friends array
         for (PFUser *user1 in self.friends) {
             if([user1.objectId isEqualToString: user.objectId]) {
@@ -85,7 +88,7 @@
         // 3. remove from relation table
         [friendsRelation removeObject:user];
     }  else {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.accessoryView =  [MSCellAccessory accessoryWithType:FLAT_CHECKMARK color: disclosureColor];
         [self.friends addObject:user];
         [friendsRelation addObject:user];
     

@@ -15,10 +15,13 @@
 
 @implementation CameraViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
     self.recipients = [[NSMutableArray alloc] init];
+   
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -76,11 +79,15 @@
     PFUser *user = [self.allFriends objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     
+    UIColor *disclosureColor = [UIColor colorWithRed:0 green:0.545 blue:0.545 alpha:1];
+    
+
+    
     if ([self.recipients containsObject:user.objectId]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;  // set checkmark at exact row
+        cell.accessoryView =  [MSCellAccessory accessoryWithType:FLAT_CHECKMARK color: disclosureColor];  // set checkmark at exact row
     }
     else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryView = nil;
     }
     
 
@@ -94,13 +101,13 @@
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     PFUser *user = [self.allFriends objectAtIndex:indexPath.row];
+    UIColor *disclosureColor = [UIColor colorWithRed:0 green:0.545 blue:0.545 alpha:1];
     
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [self.recipients addObject:user.objectId];
+    if (cell.accessoryView == nil) {
+       cell.accessoryView =  [MSCellAccessory accessoryWithType:FLAT_CHECKMARK color: disclosureColor];        [self.recipients addObject:user.objectId];
     }
     else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryView = nil;
         [self.recipients removeObject:user.objectId];
     }
     
