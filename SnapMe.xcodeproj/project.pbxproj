@@ -37,6 +37,7 @@
 		A25850C61C52141C00B1253F /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C31C52141C00B1253F /* MSCellAccessory.m */; };
 		A25850C71C52141C00B1253F /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C51C52141C00B1253F /* UIView+AccessViewController.m */; };
 		A25850CA1C54409B00B1253F /* GravatarUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = A25850C81C54409B00B1253F /* GravatarUrlBuilder.m */; };
+		A25850CC1C544E7500B1253F /* userProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = A25850CB1C544E7500B1253F /* userProfile.png */; };
 		A27791991C3E4D6F00185D2C /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A27791981C3E4D6F00185D2C /* InboxTableViewController.m */; };
 		A277919E1C3F1B2D00185D2C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919D1C3F1B2D00185D2C /* Parse.framework */; };
 		A27791A01C3F1B9500185D2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A277919F1C3F1B9500185D2C /* Bolts.framework */; };
@@ -97,6 +98,7 @@
 		A25850C51C52141C00B1253F /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
 		A25850C81C54409B00B1253F /* GravatarUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarUrlBuilder.m; sourceTree = "<group>"; };
 		A25850C91C54409B00B1253F /* GravatarUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarUrlBuilder.h; sourceTree = "<group>"; };
+		A25850CB1C544E7500B1253F /* userProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userProfile.png; sourceTree = "<group>"; };
 		A27791971C3E4D6F00185D2C /* InboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxTableViewController.h; path = ../InboxTableViewController.h; sourceTree = "<group>"; };
 		A27791981C3E4D6F00185D2C /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxTableViewController.m; path = ../InboxTableViewController.m; sourceTree = "<group>"; };
 		A277919D1C3F1B2D00185D2C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.11.0/Parse.framework"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A24C0E3E1C3CFA4B004FE793 /* Assets.xcassets */,
 				A24C0E401C3CFA4B004FE793 /* LaunchScreen.storyboard */,
 				A23266041C4DBC0F0005DC94 /* tiffinay_blue_background_edit.png */,
+				A25850CB1C544E7500B1253F /* userProfile.png */,
 				A23266021C4DB7740005DC94 /* sign_up_2.png */,
 				A23266001C4DB5AD0005DC94 /* SignUp_Backgroup.png */,
 				A23265FC1C4DAFD60005DC94 /* icon_x.png */,
@@ -316,6 +319,7 @@
 				A23265FF1C4DAFD60005DC94 /* icon_x@2x.png in Resources */,
 				A23265D41C4C6C6E0005DC94 /* icon_image@2x.png in Resources */,
 				A24C0E4F1C3CFA82004FE793 /* camera.png in Resources */,
+				A25850CC1C544E7500B1253F /* userProfile.png in Resources */,
 				A24C0E3D1C3CFA4B004FE793 /* Main.storyboard in Resources */,
 				A23266051C4DBC0F0005DC94 /* tiffinay_blue_background_edit.png in Resources */,
 				A24C0E541C3CFA82004FE793 /* inbox@2x.png in Resources */,
