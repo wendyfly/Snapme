@@ -7,6 +7,7 @@
 //
 
 #import "EditFriendsTableViewController.h"
+#import "GravatarUrlBuilder.h"
 
 @interface EditFriendsTableViewController ()
 
@@ -61,7 +62,29 @@ UIColor *disclosureColor;
     } else {
         cell.accessoryView = nil;
     }
-    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        //1.get email address
+        NSString *emal = [user objectForKey:@"email"];
+        //2.create the md5 hash
+        NSURL *gravataUrl = [GravatarUrlBuilder getGravatarUrl:emal];
+        
+        //3.request the image from gravatar
+        
+        NSData *imageData = [NSData dataWithContentsOfURL:gravataUrl];
+        
+        if(imageData !=nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //4.Set image in cell
+                
+                cell.imageView.image = [UIImage imageWithData: imageData];
+                [cell setNeedsLayout];
+            });
+        }
+        
+    });
+    cell.imageView.image = [UIImage imageNamed:@"userProfile.png"];
+
     return cell;
 }
 

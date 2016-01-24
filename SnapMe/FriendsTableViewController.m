@@ -75,11 +75,11 @@
                 cell.imageView.image = [UIImage imageWithData: imageData];
                 [cell setNeedsLayout];
             });
-        } else {
-             cell.imageView.image = [UIImage imageNamed:@"userProfile.png"];
         }
         
     });
+    cell.imageView.image = [UIImage imageNamed:@"userProfile.png"];
+
     
     
     return cell;
