@@ -49,7 +49,7 @@
      NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
      NSString *email = [self.emailField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if(username.length == 0 || password.length == 0 || email.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Oops" message: @"Please fill the username field" preferredStyle: UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Oops" message: @"Please fill up all fields" preferredStyle: UIAlertControllerStyleAlert];
         UIAlertAction* ok = [UIAlertAction
                              actionWithTitle:@"OK"
                              style:UIAlertActionStyleDefault
@@ -58,24 +58,38 @@
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                                  
                              }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"Cancel"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
         
         [alert addAction:ok];
-        [alert addAction:cancel];
          [self presentViewController:alert animated:YES completion:nil];
 
-    } else {
+    } else if(![self isValidEmail: email]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Oops" message: @"Please put valid email address" preferredStyle: UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             
+                             actionWithTitle:@"OK"
+                             
+                             style:UIAlertActionStyleDefault
+                             
+                             handler:^(UIAlertAction * action)
+                             
+                             {
+                                 
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                                 
+                                 
+                             }];
+        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }else {
         PFUser *user = [PFUser user];
         user.username = username;
         user.password = password;
         user.email = email;
+        
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
             if(!error) {
                 [self.navigationController popToRootViewControllerAnimated: true];
@@ -89,5 +103,15 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(BOOL) isValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = NO;
+    NSString *stricterFilterString = @"^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$";
+    NSString *laxString = @"^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
 }
 @end

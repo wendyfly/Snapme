@@ -17,4 +17,6 @@
 
 - (IBAction)signUp:(id)sender;
 
+- (BOOL)isValidEmail:(NSString *)checkString;
+
 @end
