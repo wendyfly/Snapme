@@ -17,11 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-KG-01X">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-KG-01X">
+                                <rect key="frame" x="0.0" y="74" width="600" height="467"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7lk-Bn-glI" firstAttribute="top" secondItem="rzA-KG-01X" secondAttribute="bottom" constant="10" id="5Cu-eI-qAn"/>
+                            <constraint firstItem="rzA-KG-01X" firstAttribute="top" secondItem="PMp-Ec-rPt" secondAttribute="bottom" id="BJK-zp-Umv"/>
+                            <constraint firstItem="7lk-Bn-glI" firstAttribute="top" secondItem="rzA-KG-01X" secondAttribute="bottom" id="IBT-ov-ZjR"/>
+                            <constraint firstItem="rzA-KG-01X" firstAttribute="top" secondItem="PMp-Ec-rPt" secondAttribute="bottom" constant="10" id="K0B-bw-bbJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzA-KG-01X" secondAttribute="trailing" id="M2l-OO-JFP"/>
+                            <constraint firstItem="rzA-KG-01X" firstAttribute="leading" secondItem="4tX-gf-eFd" secondAttribute="leadingMargin" constant="-20" id="Pg5-vV-nt7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzA-KG-01X" secondAttribute="trailing" constant="-20" id="aQe-cC-sHq"/>
+                            <constraint firstItem="rzA-KG-01X" firstAttribute="leading" secondItem="4tX-gf-eFd" secondAttribute="leadingMargin" id="dRP-0a-DUr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BJK-zp-Umv"/>
+                                <exclude reference="M2l-OO-JFP"/>
+                                <exclude reference="dRP-0a-DUr"/>
+                                <exclude reference="IBT-ov-ZjR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="rzA-KG-01X" id="Xpd-Ve-R0b"/>

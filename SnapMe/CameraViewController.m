@@ -195,7 +195,7 @@
     
     //1. check if image or video
     if(self.image != nil) {
-        UIImage *newImage = [ self resizeImage:self.image toWidth:320.0f andHeight: 480.0f];
+        UIImage *newImage = [ self resizeImage:self.image toWidth:600.0f andHeight: 400.0f];
         fileData = UIImagePNGRepresentation(newImage);
         fileName = @"image.png";
         fileType = @"image";
@@ -266,12 +266,15 @@
 
 -(UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height {
     CGSize newSize = CGSizeMake(width, height);
-    CGRect newRectangle = CGRectMake(0, 0, width, height);
     UIGraphicsBeginImageContext(newSize);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    CGRect newRectangle = CGRectMake(0, 0, newSize.width, newSize.height);
     [self.image drawInRect:newRectangle];
     UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return resizeImage;
     
 }
+
+
 @end
